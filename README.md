@@ -19,6 +19,9 @@ estratégicos para a empresa.
 As entidades utilizadas foram:
 
 
+![modelo-logico](https://ibb.co/JsJG661)
+
+
 !(https://ibb.co/JsJG661)
 
 
