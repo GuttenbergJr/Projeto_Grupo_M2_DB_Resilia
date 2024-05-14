@@ -24,7 +24,7 @@ As entidades utilizadas foram:
 
 
 
-<strong> 🔧 TECNOLOGIAS UTILIZADAS</strong>
+<strong> 🔨🔧💻 TECNOLOGIAS UTILIZADAS</strong>
   
 MySQL WorkBench
   
@@ -34,8 +34,7 @@ Excel
 ## 🤝 Squad:
 
 
-<a style="display: block;" href="https://github.com/carolrc
-" target="_blank">
+<a style="display: block;" href="https://github.com/carolrc" target="_blank">
 <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
 </a> <h2>Carolina</h2>
 
@@ -45,7 +44,7 @@ Excel
 </a> <h2>Diego Marques</h2>
 
 
-<a style="display: block;" href="github.com/gabirc26" target="_blank">
+<a style="display: block;" href="https://github.com/gabirc26" target="_blank">
 <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
 </a> <h2>Gabriela Rocha</h2>
 
