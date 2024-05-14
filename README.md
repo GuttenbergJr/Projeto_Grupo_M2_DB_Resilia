@@ -19,7 +19,7 @@ estratégicos para a empresa.
 As entidades utilizadas foram:
 
 
-![modelagem_bancodedados](https://ibb.co/JsJG661)
+!(https://ibb.co/JsJG661)
 
 
 <strong>📑 Perguntas</strong>
