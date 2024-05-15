@@ -1,3 +1,4 @@
+
 CREATE DATABASE db_resilia;
 USE db_resilia;
 
@@ -261,6 +262,20 @@ BEGIN
         VALUES (NEW.matricula_id, CURRENT_TIMESTAMP(), OLD.status_mat, NEW.status_mat);
     END IF;
 END;
+
+SELECT 
+    t.turma_id,
+    COUNT(a.matricula_id) AS num_alunos,
+    f.nome AS facilitador
+FROM 
+    Turma t
+INNER JOIN 
+    Facilitador f ON t.facilitador_id = f.facilitador_id
+LEFT JOIN 
+    Aluno a ON t.turma_id = a.turma_id
+GROUP BY 
+    t.turma_id, f.nome;
+
 
 
     
