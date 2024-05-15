@@ -236,4 +236,20 @@ INSERT INTO Conteudo_aplicado (modulo_id, turma_id, qtd_aulas) VALUES
 SELECT COUNT(*) AS num_alunos FROM Aluno;
 
 SELECT facilitador_id FROM Turma GROUP BY facilitador_id HAVING COUNT(DISTINCT turma_id) > 1;
+
+CREATE VIEW Porcentagem_Evasao_Por_Turma AS
+SELECT 
+    t.turma_id,
+    COUNT(a.matricula_id) AS total_alunos,
+    SUM(CASE WHEN m.status_mat = false THEN 1 ELSE 0 END) AS evadidos,
+    (SUM(CASE WHEN m.status_mat = false THEN 1 ELSE 0 END) / COUNT(a.matricula_id)) * 100 AS porcentagem_evasao
+FROM 
+    Turma t
+LEFT JOIN 
+    Aluno a ON t.turma_id = a.turma_id
+LEFT JOIN 
+    Matricula m ON a.matricula_id = m.matricula_id
+GROUP BY 
+    t.turma_id;
+
     
