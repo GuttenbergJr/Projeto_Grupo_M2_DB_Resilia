@@ -252,4 +252,15 @@ LEFT JOIN
 GROUP BY 
     t.turma_id;
 
+CREATE TRIGGER log_atualizacao_status
+AFTER UPDATE ON Matricula
+FOR EACH ROW
+BEGIN
+    IF OLD.status_mat <> NEW.status_mat THEN
+        INSERT INTO Log_Status_Estudante (matricula_id, data_atualizacao, status_anterior, status_atual)
+        VALUES (NEW.matricula_id, CURRENT_TIMESTAMP(), OLD.status_mat, NEW.status_mat);
+    END IF;
+END;
+
+
     
