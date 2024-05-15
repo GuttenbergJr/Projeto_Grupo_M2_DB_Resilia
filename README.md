@@ -16,7 +16,7 @@ estratégicos para a empresa.
 
 <strong>Entidades</strong>
 
-As entidades utilizadas foram:
+As entidades utilizadas e relacionamentos foram:
 
 
 ![modelo-logico](https://ibb.co/JsJG661)
@@ -40,26 +40,29 @@ Excel
 ## 🤝 Squad:
 
 
+
+</a> <h2>Carolina</h2>
 <a style="display: block;" href="https://github.com/carolrc" target="_blank">
 <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
-</a> <h2>Carolina</h2>
 
 
+</a> <h2>Diego Marques</h2>
 <a style="display: block;" href="https://github.com/Diegool97" target="_blank">
 <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
-</a> <h2>Diego Marques</h2>
 
 
+</a> <h2>Gabriela Rocha</h2>
 <a style="display: block;" href="https://github.com/gabirc26" target="_blank">
 <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
-</a> <h2>Gabriela Rocha</h2>
 
+
+</a> <h2>Guttenberg Junior</h2>
 <a style="display: block;" href="https://github.com/GuttenbergJr" target="_blank">
 <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
-</a> <h2>Guttenberg Junior</h2>
 
 
+</a> <h2>Vitória Tavares</h2>
 <a style="display: block;" href="https://github.com/VihProgramer" target="_blank">
 <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
-</a> <h2>Vitória Tavares</h2>
+
 
