@@ -296,7 +296,7 @@ GROUP BY
     t.turma_id, f.nome;
 
 -- Pergunta (6) - Quais são os facilitadores que têm o maior número de alunos matriculados em suas turmas e em quais cursos esses alunos estão matriculados? 
--- COM ERROR
+-- COM ERRO
 SELECT 
     f.nome AS facilitador,
     COUNT(a.matricula_id) AS num_alunos,
@@ -325,8 +325,3 @@ WHERE
     )
 GROUP BY 
     f.nome, c.nome;
-
-
-
-
-    
