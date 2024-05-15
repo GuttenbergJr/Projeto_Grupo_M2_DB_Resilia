@@ -22,9 +22,14 @@ As entidades utilizadas e relacionamentos foram:
 
 
 
-<strong>📑 Perguntas</strong>
+<strong>📑 Perguntas e consultas</strong>
 
-
+1. <strong>Selecionar a quantidade total de estudantes cadastrados no banco;</strong>
+2. <strong>Selecionar quais pessoas facilitadoras atuam em mais de uma turma;</strong>
+3. <strong>Crie uma view que selecione a porcentagem de estudantes com status de evasão agrupados por turma;</strong>
+4. <strong>Crie um trigger para ser disparado quando o atributo status de um estudante for atualizado e inserir um novo dado em uma tabela de log;</strong>
+5. <strong>Quantos alunos estão matriculados em cada turma e quem são os facilitadores dessas turmas?</strong>
+6. <strong>Quais são os facilitadores que têm o maior número de alunos matriculados em suas turmas e em quais cursos esses alunos estão matriculados?</strong>
 
 
 <strong> 🔨🔧💻 TECNOLOGIAS UTILIZADAS</strong>
