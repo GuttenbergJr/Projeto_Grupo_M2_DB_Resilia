@@ -40,7 +40,7 @@ CREATE TABLE Curso (
 CREATE TABLE Matricula (
 	matricula_id INTEGER PRIMARY KEY,
     data_matricula DATE,
-	status_mat BOOLEAN,
+	matricula_ativa BOOLEAN,
     frequencia FLOAT(3,2),
     media FLOAT(3,2),
     curso_id INTEGER,
@@ -90,7 +90,13 @@ CREATE TABLE Conteudo_aplicado (
     CONSTRAINT fk_conteudoTurma FOREIGN KEY (turma_id) REFERENCES turma (turma_id)
 );
 
+CREATE TABLE matricula_log (
+	matricula_id INT PRIMARY KEY,  
+	status_antigo BOOLEAN,	
+	status_novo BOOLEAN
+    );
 
+DROP TABLE matricula_log;
 
 INSERT INTO Facilitador (facilitador_id, nome, cpf, cep, numero, logradouro, bairro, municipio, uf, email, telefone, celular) VALUES 
 (1, 'José Bezerra', '12345678901', '12345678', '123', 'Rua A', 'Centro', 'Cidade A', 'UF', 'fulano@example.com', '1234567890', '98765432101'),
@@ -110,7 +116,7 @@ INSERT INTO Curso (curso_id, nome, descricao, qtd_turmas, qtd_matriculas, qtd_mo
 (3, 'Curso de Finanças Pessoais', 'Curso prático sobre gestão financeira pessoal', 2, 24, 1, 40, 3),
 (4, 'Curso de Fotografia', 'Curso abrangente sobre técnicas de fotografia', 1, 8, 2, 70, 1);
 
-INSERT INTO Matricula (matricula_id, data_matricula, status_mat, frequencia, media, curso_id) VALUES 
+INSERT INTO Matricula (matricula_id, data_matricula, matricula_ativa, frequencia, media, curso_id) VALUES 
 (1423,'2024-01-15', true, 0.85, 7.5, 1),
 (2126, '2024-02-20', true, 0.90, 8.2, 1),
 (4523, '2024-03-25', true, 0.80, 7.8, 1),
@@ -233,7 +239,94 @@ INSERT INTO Conteudo_aplicado (modulo_id, turma_id, qtd_aulas) VALUES
 (5,3,2),
 (6,3,1);
 
+-- Pergunta (1) -  Verificando a quantidade TOTAL dos alunos registrados no banco de dados;
 SELECT COUNT(*) AS num_alunos FROM Aluno;
 
+-- Pergunta (2) - Verificando quais são os facilitadores que dão aula em mais de uma turma;
 SELECT facilitador_id FROM Turma GROUP BY facilitador_id HAVING COUNT(DISTINCT turma_id) > 1;
+
+-- Pergunta (3) - Verificar porcentagem de evasão de alunos por turma.
+CREATE VIEW Porcentagem_Evasao_Por_Turma AS
+SELECT 
+    t.turma_id,
+    COUNT(a.matricula_id) AS total_alunos,
+    SUM(CASE WHEN m.matricula_ativa = false THEN 1 ELSE 0 END) AS evadidos,
+    (SUM(CASE WHEN m.matricula_ativa = false THEN 1 ELSE 0 END) / COUNT(a.matricula_id)) * 100 AS porcentagem_evasao
+FROM 
+    Turma t
+LEFT JOIN 
+    Aluno a ON t.turma_id = a.turma_id
+LEFT JOIN 
+    Matricula m ON a.matricula_id = m.matricula_id
+GROUP BY 
+    t.turma_id;
+    
+-- SELECT pardão para verificar a tabela de Porcentagem_Evasao_Por_Turma.
+SELECT * FROM Porcentagem_Evasao_Por_Turma;
+
+-- Pergunta (4) -  Criação do TRIGGER que é ativado quando nós modificamos o BOOLEAN da entidade Matricula.
+DELIMITER $$
+CREATE TRIGGER trig_matricula_status
+AFTER UPDATE ON matricula
+FOR EACH ROW
+BEGIN
+    IF OLD.matricula_ativa != NEW.matricula_ativa THEN
+        INSERT INTO matricula_log (matricula_id, status_antigo, status_novo)
+        VALUES (matricula_id, OLD.matricula_ativa, NEW.matricula_ativa);
+    END IF;
+END$$
+DELIMITER ;
+-- Exemplo de update, onde a entidade 'matricula_ativa' do id 3212 é modificado para TRUE.
+UPDATE matricula SET matricula_ativa = TRUE WHERE matricula_id = 3212;
+-- SELECT pardão para verificar a tabela de logs.
+SELECT * FROM matricula_log;
+
+-- Pergunta (5) - Quantos alunos estão matriculados em cada turma e quem são os facilitadores dessas turmas?
+SELECT 
+    t.turma_id,
+    COUNT(a.matricula_id) AS num_alunos,
+    f.nome AS facilitador
+FROM 
+    Turma t
+INNER JOIN 
+    Facilitador f ON t.facilitador_id = f.facilitador_id
+LEFT JOIN 
+    Aluno a ON t.turma_id = a.turma_id
+GROUP BY 
+    t.turma_id, f.nome;
+
+-- Pergunta (6) - Quais são os facilitadores que têm o maior número de alunos matriculados em suas turmas e em quais cursos esses alunos estão matriculados? 
+-- COM ERROR
+SELECT 
+    f.nome AS facilitador,
+    COUNT(a.matricula_id) AS num_alunos,
+    c.nome AS curso
+FROM 
+    Facilitador f
+INNER JOIN 
+    Turma t ON f.facilitador_id = t.facilitador_id
+INNER JOIN 
+    Aluno a ON t.turma_id = a.turma_id
+INNER JOIN 
+    Matricula m ON a.matricula_id = m.matricula_id
+INNER JOIN 
+    Curso c ON m.curso_id = c.curso_id
+WHERE 
+    f.facilitador_id IN (
+        SELECT 
+            facilitador_id
+        FROM 
+            Turma
+        GROUP BY 
+            facilitador_id
+        ORDER BY 
+            COUNT(*) DESC
+        LIMIT 1
+    )
+GROUP BY 
+    f.nome, c.nome;
+
+
+
+
     
