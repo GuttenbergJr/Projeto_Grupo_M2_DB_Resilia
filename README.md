@@ -18,7 +18,7 @@ estratégicos para a empresa.
 
 As entidades utilizadas e relacionamentos foram:
 
-![Imagem do Gráfico](https://i.ibb.co/JsJG661/modelo-fisico.png)
+![Imagem do Gráfico](https://i.ibb.co/S3CMYYj/modelo-fisico.png)
 
 
 
