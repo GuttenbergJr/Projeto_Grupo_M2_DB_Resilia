@@ -276,6 +276,37 @@ LEFT JOIN
 GROUP BY 
     t.turma_id, f.nome;
 
+SELECT 
+    f.nome AS facilitador,
+    COUNT(a.matricula_id) AS num_alunos,
+    c.nome AS curso
+FROM 
+    Facilitador f
+INNER JOIN 
+    Turma t ON f.facilitador_id = t.facilitador_id
+INNER JOIN 
+    Aluno a ON t.turma_id = a.turma_id
+INNER JOIN 
+    Matricula m ON a.matricula_id = m.matricula_id
+INNER JOIN 
+    Curso c ON m.curso_id = c.curso_id
+WHERE 
+    f.facilitador_id IN (
+        SELECT 
+            facilitador_id
+        FROM 
+            Turma
+        GROUP BY 
+            facilitador_id
+        ORDER BY 
+            COUNT(*) DESC
+        LIMIT 1
+    )
+GROUP BY 
+    f.nome, c.nome;
+
+
+
 
 
     
