@@ -103,10 +103,10 @@ INSERT INTO Facilitador (facilitador_id, nome, cpf, cep, numero, logradouro, bai
 
 INSERT INTO Turma (turma_id, sala, qtd_alunos, turno, facilitador_id) VALUES 
 (1, 101, 8, 'Manhã', 1),
-(2, 102, 12, 'Noite', 3),
-(3, 103, 8, 'Manhã', 3),
-(4, 104, 6, 'Tarde', 1),
-(5, 105, 12, 'Tarde', 2);
+(2, 102, 8, 'Noite', 1),
+(3, 103, 12, 'Manhã', 3),
+(4, 104, 12, 'Tarde', 3),
+(5, 105, 6, 'Manhã', 2);
 
 INSERT INTO Curso (curso_id, nome, descricao, qtd_turmas, qtd_matriculas, qtd_modulos, carga_horaria, facilitador_id) VALUES 
 (1, 'Curso de Programação Web', 'Curso introdutório sobre desenvolvimento web', 1, 6, 2, 60, 2),
@@ -118,7 +118,7 @@ INSERT INTO Matricula (matricula_id, data_matricula, matricula_ativa, frequencia
 (1423,'2024-01-15', true, 0.85, 7.5, 1),
 (2126, '2024-02-20', true, 0.90, 8.2, 1),
 (4523, '2024-03-25', true, 0.80, 7.8, 1),
-(4123, '2024-04-10', false, 0.75, 6.9, 1),
+(4123, '2024-04-10', true, 0.75, 6.9, 1),
 (5444, '2024-05-05', true, 0.95, 8.9, 1),
 (6125, '2024-06-12', false, 0.70, 6.5, 1),
 
@@ -145,16 +145,16 @@ INSERT INTO Matricula (matricula_id, data_matricula, matricula_ativa, frequencia
 (2244, '2024-12-05', true, 0.97, 9.3, 3),
 (2115, '2024-01-02', true, 0.91, 8.3, 3),
 (2216, '2024-02-05', true, 0.88, 7.9, 3),
-(2457, '2024-03-10', true, 0.95, 9.0, 3),
+(2457, '2024-03-10', false, 0.95, 9.0, 3),
 (2128, '2024-04-15', false, 0.68, 6.0, 3),
 (229, '2024-05-20', true, 0.92, 8.5, 3),
 (3330, '2024-06-25', true, 0.89, 8.2, 3),
 (3411, '2024-07-05', true, 0.94, 8.9, 3),
 (3212, '2024-08-10', false, 0.73, 6.4, 3),
-(3453, '2024-09-15', true, 0.96, 9.2, 3),
+(3453, '2024-09-15', false, 0.96, 9.2, 3),
 (3114, '2024-10-20', true, 0.90, 8.1, 3),
-(3355, '2024-11-25', true, 0.87, 7.9, 3),
-(3116, '2024-12-05', true, 0.93, 8.7, 3),
+(3355, '2024-11-25', false, 0.87, 7.9, 3),
+(3116, '2024-12-05', false, 0.93, 8.7, 3),
 (3127, '2024-01-10', true, 0.85, 7.6, 4),
 (3348, '2024-02-15', true, 0.91, 8.3, 4),
 (3559, '2024-03-20', false, 0.72, 6.1, 4),
@@ -181,18 +181,6 @@ INSERT INTO Aluno (matricula_id, turma_id, nome, cpf, cep, numero, logradouro, b
 (1334, 2, 'Patrícia Santos', '76543210934', '76543210', '765', 'Rua M', 'Bairro O', 'Cidade M', 'UF', 'patricia@example.com', '7654321098', '65432109876'),
 (1455, 2, 'Roberto Souza', '65432109845', '65432109', '654', 'Rua N', 'Bairro N', 'Cidade N', 'UF', 'roberto@example.com', '6543210987', '54321098765'),
 
-(1233, 3, 'Camila Oliveira', '54321098756', '54321098', '543', 'Rua O', 'Bairro M', 'Cidade O', 'UF', 'camila@example.com', '5432109876', '43210987654'),
-(1424, 3, 'Diego Silva', '43210987667', '43210987', '432', 'Rua P', 'Bairro L', 'Cidade P', 'UF', 'diego@example.com', '4321098765', '32109876543'),
-(1555, 3, 'Sandra Souza', '32109876578', '32109876', '321', 'Rua Q', 'Bairro K', 'Cidade Q', 'UF', 'sandra@example.com', '3210987654', '21098765432'),
-(1126, 3, 'Jorge Pereira', '21098765489', '21098765', '210', 'Rua R', 'Bairro J', 'Cidade R', 'UF', 'jorge@example.com', '2109876543', '10987654321'),
-(1217, 3, 'Vanessa Santos', '10987654390', '10987654', '109', 'Rua S', 'Bairro I', 'Cidade S', 'UF', 'vanessa@example.com', '1098765432', '98765432110'),
-(1558, 3, 'Felipe Lima', '09876543201', '09876543', '098', 'Rua T', 'Bairro H', 'Cidade T', 'UF', 'felipe@example.com', '0987654321', '87654321098'),
-(1119, 3, 'Juliana Oliveira', '98765432112', '98765432', '987', 'Rua U', 'Bairro G', 'Cidade U', 'UF', 'juliana@example.com', '9876543210', '76543210987'),
-(2230, 3, 'Lucas Vieira', '87654321057', '87654321', '876', 'Rua V', 'Bairro F', 'Cidade V', 'UF', 'lucas@example.com', '8765432109', '65432109876'),
-(2241, 3, 'Aline Santos', '76543210911', '76543210', '765', 'Rua W', 'Bairro E', 'Cidade W', 'UF', 'aline@example.com', '7654321098', '54321098765'),
-(2552, 3, 'Rafael Oliveira', '65432109800', '65432109', '654', 'Rua X', 'Bairro D', 'Cidade X', 'UF', 'rafael@example.com', '6543210987', '43210987654'),
-(2123, 3, 'Fernanda Souza', '54321098757', '54321098', '543', 'Rua Y', 'Bairro C', 'Cidade Y', 'UF', 'fernanda@example.com', '5432109876', '32109876543'),
-(2244, 3, 'Robson Silva', '4321098762', '43210987', '432', 'Rua Z', 'Bairro B', 'Cidade Z', 'UF', 'robson@example.com', '4321098765', '21098765432'),
 (2115, 3, 'Bruna Oliveira', '32109876512', '32109876', '321', 'Rua A1', 'Bairro A', 'Cidade A1', 'UF', 'bruna@example.com', '3210987654', '10987654321'),
 (2216, 3, 'André Santos', '21098765400', '21098765', '210', 'Rua B1', 'Bairro B1', 'Cidade B1', 'UF', 'andre@example.com', '2109876543', '09876543210'),
 (2457, 3, 'Carolina Souza', '10987654300', '10987654', '109', 'Rua C1', 'Bairro C1', 'Cidade C1', 'UF', 'carolina@example.com', '1098765432', '98765432452'),
@@ -213,7 +201,20 @@ INSERT INTO Aluno (matricula_id, turma_id, nome, cpf, cep, numero, logradouro, b
 (4351, 4, 'Ricardo Oliveira', '76543210953', '76543210', '765', 'Rua Q1', 'Bairro Q1', 'Cidade Q1', 'UF', 'ricardo@example.com', '7654321098', '54321098765'),
 (4322, 4, 'Carla Santos', '65432109811', '65432109', '654', 'Rua R1', 'Bairro R1', 'Cidade R1', 'UF', 'carla@example.com', '6543210987', '43210987654'),
 (4112, 4, 'Isabela Oliveira', '54321098700', '54321098', '543', 'Rua U1', 'Bairro U1', 'Cidade U1', 'UF', 'isabela@example.com', '4321098765', '32109876543'),
-(4433, 4, 'Thiago Santos', '43210987611', '43210987', '432', 'Rua V1', 'Bairro V1', 'Cidade V1', 'UF', 'thiago@example.com', '4321098765', '21098765432');
+(4433, 4, 'Thiago Santos', '43210987611', '43210987', '432', 'Rua V1', 'Bairro V1', 'Cidade V1', 'UF', 'thiago@example.com', '4321098765', '21098765432'),
+
+(1233, 5, 'Camila Oliveira', '54321098756', '54321098', '543', 'Rua O', 'Bairro M', 'Cidade O', 'UF', 'camila@example.com', '5432109876', '43210987654'),
+(1424, 5, 'Diego Silva', '43210987667', '43210987', '432', 'Rua P', 'Bairro L', 'Cidade P', 'UF', 'diego@example.com', '4321098765', '32109876543'),
+(1555, 5, 'Sandra Souza', '32109876578', '32109876', '321', 'Rua Q', 'Bairro K', 'Cidade Q', 'UF', 'sandra@example.com', '3210987654', '21098765432'),
+(1126, 5, 'Jorge Pereira', '21098765489', '21098765', '210', 'Rua R', 'Bairro J', 'Cidade R', 'UF', 'jorge@example.com', '2109876543', '10987654321'),
+(1217, 5, 'Vanessa Santos', '10987654390', '10987654', '109', 'Rua S', 'Bairro I', 'Cidade S', 'UF', 'vanessa@example.com', '1098765432', '98765432110'),
+(1558, 5, 'Felipe Lima', '09876543201', '09876543', '098', 'Rua T', 'Bairro H', 'Cidade T', 'UF', 'felipe@example.com', '0987654321', '87654321098'),
+(1119, 5, 'Juliana Oliveira', '98765432112', '98765432', '987', 'Rua U', 'Bairro G', 'Cidade U', 'UF', 'juliana@example.com', '9876543210', '76543210987'),
+(2230, 5, 'Lucas Vieira', '87654321057', '87654321', '876', 'Rua V', 'Bairro F', 'Cidade V', 'UF', 'lucas@example.com', '8765432109', '65432109876'),
+(2241, 5, 'Aline Santos', '76543210911', '76543210', '765', 'Rua W', 'Bairro E', 'Cidade W', 'UF', 'aline@example.com', '7654321098', '54321098765'),
+(2552, 5, 'Rafael Oliveira', '65432109800', '65432109', '654', 'Rua X', 'Bairro D', 'Cidade X', 'UF', 'rafael@example.com', '6543210987', '43210987654'),
+(2123, 5, 'Fernanda Souza', '54321098757', '54321098', '543', 'Rua Y', 'Bairro C', 'Cidade Y', 'UF', 'fernanda@example.com', '5432109876', '32109876543'),
+(2244, 5, 'Robson Silva', '4321098762', '43210987', '432', 'Rua Z', 'Bairro B', 'Cidade Z', 'UF', 'robson@example.com', '4321098765', '21098765432');
 
 INSERT INTO Modulo (modulo_id, titulo, descricao, qtd_aulas, facilitador_id) VALUES 
 (1, 'Introdução à Programação', 'Este módulo apresenta os conceitos básicos de programação.', 10, 2),
@@ -236,101 +237,3 @@ INSERT INTO Conteudo_aplicado (modulo_id, turma_id, qtd_aulas) VALUES
 (4,3,6),
 (5,3,2),
 (6,3,1);
-
--- Pergunta (1) -  Verificando a quantidade TOTAL dos alunos registrados no banco de dados;
-SELECT COUNT(*) AS num_alunos FROM Aluno;
-
--- Pergunta (2) - Verificando quais são os facilitadores que dão aula em mais de uma turma;
-SELECT facilitador_id FROM Turma GROUP BY facilitador_id HAVING COUNT(DISTINCT turma_id) > 1;
-
--- Pergunta (3) - Verificar porcentagem de evasão de alunos por turma.
-CREATE VIEW Porcentagem_Evasao_Por_Turma AS
-SELECT 
-    t.turma_id,
-    COUNT(a.matricula_id) AS total_alunos,
-    SUM(CASE WHEN m.matricula_ativa = false THEN 1 ELSE 0 END) AS evadidos,
-    (SUM(CASE WHEN m.matricula_ativa = false THEN 1 ELSE 0 END) / COUNT(a.matricula_id)) * 100 AS porcentagem_evasao
-FROM 
-    Turma t
-LEFT JOIN 
-    Aluno a ON t.turma_id = a.turma_id
-LEFT JOIN 
-    Matricula m ON a.matricula_id = m.matricula_id
-GROUP BY 
-    t.turma_id;
-    
--- SELECT pardão para verificar a tabela de Porcentagem_Evasao_Por_Turma.
-SELECT * FROM Porcentagem_Evasao_Por_Turma;
-
--- Pergunta (4) -  Criação do TRIGGER que é ativado quando nós modificamos o BOOLEAN da entidade Matricula.
-DELIMITER $$
-CREATE TRIGGER trig_matricula_status
-AFTER UPDATE ON matricula
-FOR EACH ROW
-BEGIN
-    IF OLD.matricula_ativa != NEW.matricula_ativa THEN
-        INSERT INTO matricula_log (matricula_id, status_antigo, status_novo)
-        VALUES (matricula_id, OLD.matricula_ativa, NEW.matricula_ativa);
-    END IF;
-END$$
-DELIMITER ;
--- Exemplo de update, onde a entidade 'matricula_ativa' do id 3212 é modificado para TRUE.
-UPDATE matricula SET matricula_ativa = TRUE WHERE matricula_id = 3212;
--- SELECT padrão para verificar a tabela de logs.
-SELECT * FROM matricula_log;
-
--- Pergunta (5) - Quantos alunos estão matriculados em cada turma e quem são os facilitadores dessas turmas?
-SELECT 
-    t.turma_id,
-    COUNT(a.matricula_id) AS num_alunos,
-    f.nome AS facilitador
-FROM 
-    Turma t
-INNER JOIN 
-    Facilitador f ON t.facilitador_id = f.facilitador_id
-LEFT JOIN 
-    Aluno a ON t.turma_id = a.turma_id
-GROUP BY 
-    t.turma_id, f.nome;
-
--- Pergunta (6) - Quais são os facilitadores que têm o maior número de alunos matriculados em suas turmas e em quais cursos esses alunos estão matriculados? 
--- Obter o facilitador_id com o maior número de turmas
-SELECT 
-    facilitador_id
-FROM 
-    Turma
-GROUP BY 
-    facilitador_id
-ORDER BY 
-    COUNT(*) DESC
-LIMIT 1;
--- Usar o facilitador_id obtido na Parte 1 para filtrar os resultados
-SELECT 
-    f.nome AS facilitador,
-    COUNT(a.matricula_id) AS num_alunos,
-    c.nome AS curso
-FROM 
-    Facilitador f
-INNER JOIN 
-    Turma t ON f.facilitador_id = t.facilitador_id
-INNER JOIN 
-    Aluno a ON t.turma_id = a.turma_id
-INNER JOIN 
-    Matricula m ON a.matricula_id = m.matricula_id
-INNER JOIN 
-    Curso c ON m.curso_id = c.curso_id
-WHERE 
-    f.facilitador_id = (
--- Subconsulta para obter o facilitador_id com o maior número de turmas
-        SELECT 
-            facilitador_id
-        FROM 
-            Turma
-        GROUP BY 
-            facilitador_id
-        ORDER BY 
-            COUNT(*) DESC
-        LIMIT 1
-    )
-GROUP BY 
-    f.nome, c.nome;
