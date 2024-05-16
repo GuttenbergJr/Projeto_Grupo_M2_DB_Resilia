@@ -36,27 +36,29 @@ As entidades utilizadas e relacionamentos foram:
 ![Imagem do Gráfico](https://i.ibb.co/w0rfzgT/perg2.jpg)
 
 <br>
-<strong>3.</strong Crie uma view que selecione a porcentagem de estudantes com status de evasão agrupados por turma;
+<strong>3.</strong> Crie uma view que selecione a porcentagem de estudantes com status de evasão agrupados por turma;
  <br>
  
-![Imagem do Gráfico](https://i.ibb.co/bXFPGG3/perg3.jpg)
+![Imagem do Gráfico](https://github.com/GuttenbergJr/Projeto_Grupo_M2_DB_Resilia/assets/114154174/6e68b24c-4d56-4b1b-aef2-8822a9aa085f)
 
 <br>
 <strong>4. </strong>Crie um trigger para ser disparado quando o atributo status de um estudante for atualizado e inserir um novo dado em uma tabela de log;
  <br>
  
-![Imagem do Gráfico](https://i.ibb.co/bXFPGG3/perg3.jpg)
+![Imagem do Gráfico](https://github.com/GuttenbergJr/Projeto_Grupo_M2_DB_Resilia/assets/114154174/d00722e9-8e9d-4284-b46c-03b0d1d8eca8)
 
 <br>
 <strong>5. </strong>Quantos alunos estão matriculados em cada turma e quem são os facilitadores dessas turmas?
  <br>
  
-![Imagem do Gráfico](https://i.ibb.co/3kyKVJy/perg5.jpg)
+![Imagem do Gráfico](https://github.com/GuttenbergJr/Projeto_Grupo_M2_DB_Resilia/assets/114154174/eb098dba-33b9-45ed-8914-31604e6a06a0)
 
 <br>
+
 <strong>6. </strong>Quais são os facilitadores que têm o maior número de alunos matriculados em suas turmas e em quais cursos esses alunos estão matriculados?
  <br>
-![Imagem do Gráfico](https://i.ibb.co/bXFPGG3/perg3.jpg)
+![Imagem do Gráfico](https://github.com/GuttenbergJr/Projeto_Grupo_M2_DB_Resilia/assets/114154174/fe181dac-d51e-42a3-9f22-5e944b94993e)
+
 
 <br>
 
