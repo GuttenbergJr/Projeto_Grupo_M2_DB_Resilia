@@ -14,6 +14,7 @@ módulos e cursos em planilhas. Essas informações são colocadas em
 planilhas diferentes, dificultando muitas das vezes a extração de dados
 estratégicos para a empresa.
 
+
 ## Entidades e relacionamentos
 
 As entidades utilizadas e relacionamentos foram:
@@ -26,18 +27,36 @@ As entidades utilizadas e relacionamentos foram:
 
  <strong>1.</strong>Selecionar a quantidade total de estudantes cadastrados no banco;
 ![Imagem do Gráfico](https://i.ibb.co/Dps9ft3/perg1.jpg)
+
+<br>
  <strong>2.</strong>Selecionar quais pessoas facilitadoras atuam em mais de uma turma;
+ 
 ![Imagem do Gráfico](https://i.ibb.co/w0rfzgT/perg2.jpg)
+
+<br>
 <strong>3.</strong Crie uma view que selecione a porcentagem de estudantes com status de evasão agrupados por turma;
-![Imagem do Gráfico](https://i.ibb.co/bXFPGG3/perg3.jpg)
-<strong>4. </strong>Crie um trigger para ser disparado quando o atributo status de um estudante for atualizado e inserir um novo dado em uma tabela de log;
-![Imagem do Gráfico](https://i.ibb.co/bXFPGG3/perg3.jpg)
-<strong>5. </strong>Quantos alunos estão matriculados em cada turma e quem são os facilitadores dessas turmas?
-![Imagem do Gráfico](https://i.ibb.co/3kyKVJy/perg5.jpg)
-<strong>6. </strong>Quais são os facilitadores que têm o maior número de alunos matriculados em suas turmas e em quais cursos esses alunos estão matriculados?
+
 ![Imagem do Gráfico](https://i.ibb.co/bXFPGG3/perg3.jpg)
 
- ## 🔨🔧💻 TECNOLOGIAS UTILIZADAS
+<br>
+<strong>4. </strong>Crie um trigger para ser disparado quando o atributo status de um estudante for atualizado e inserir um novo dado em uma tabela de log;
+
+![Imagem do Gráfico](https://i.ibb.co/bXFPGG3/perg3.jpg)
+
+<br>
+<strong>5. </strong>Quantos alunos estão matriculados em cada turma e quem são os facilitadores dessas turmas?
+
+![Imagem do Gráfico](https://i.ibb.co/3kyKVJy/perg5.jpg)
+
+<br>
+<strong>6. </strong>Quais são os facilitadores que têm o maior número de alunos matriculados em suas turmas e em quais cursos esses alunos estão matriculados?
+
+![Imagem do Gráfico](https://i.ibb.co/bXFPGG3/perg3.jpg)
+
+<br>
+
+## 🔨🔧💻 Tecnologias utilizadas
+ 
   
 MySQL WorkBench
   
