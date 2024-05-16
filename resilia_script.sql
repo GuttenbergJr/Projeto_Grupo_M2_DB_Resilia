@@ -62,11 +62,11 @@ GROUP BY
 
 
 -- Pergunta (6) - Quais são os facilitadores que têm o maior número de alunos matriculados em suas turmas e em quais cursos esses alunos estão matriculados? 
--- Encontrar o facilitador com o maior número de alunos matriculados e os cursos correspondentes
+
 SELECT 
     Facilitador.nome AS nome_facilitador, 
     Curso.nome AS nome_curso, 
-    COUNT(Matricula.matricula_id) AS alunos_totais
+    qtd_matriculas AS alunos_totais
 FROM 
     Facilitador
 JOIN 
