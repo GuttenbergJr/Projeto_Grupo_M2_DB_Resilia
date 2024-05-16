@@ -22,7 +22,7 @@ CREATE TABLE Turma(
 	qtd_alunos INTEGER,
 	turno VARCHAR(10),
 	facilitador_id INTEGER,
-	CONSTRAINT fk_facilitadorTurma FOREIGN KEY (facilitador_id) REFERENCES facilitador (facilitador_id)
+	CONSTRAINT fk_facilitadorTurma FOREIGN KEY (facilitador_id) REFERENCES Facilitador (facilitador_id)
 );
 
 CREATE TABLE Curso (
@@ -34,7 +34,7 @@ CREATE TABLE Curso (
     qtd_modulos INTEGER,
     carga_horaria INTEGER,
     facilitador_id INTEGER,
-    CONSTRAINT fk_facilitadorCurso FOREIGN KEY (facilitador_id) REFERENCES facilitador (facilitador_id)
+    CONSTRAINT fk_facilitadorCurso FOREIGN KEY (facilitador_id) REFERENCES Facilitador (facilitador_id)
 );
 
 CREATE TABLE Matricula (
@@ -44,7 +44,7 @@ CREATE TABLE Matricula (
     frequencia FLOAT(3,2),
     media FLOAT(3,2),
     curso_id INTEGER,
-    CONSTRAINT fk_cursoMatricula FOREIGN KEY (curso_id) REFERENCES curso (curso_id)
+    CONSTRAINT fk_cursoMatricula FOREIGN KEY (curso_id) REFERENCES Curso (curso_id)
 );
     
 CREATE TABLE Aluno (
@@ -61,8 +61,8 @@ CREATE TABLE Aluno (
     email VARCHAR(50),
     telefone VARCHAR(10),
     celular VARCHAR(11),
-	CONSTRAINT fk_matriculaAluno FOREIGN KEY (matricula_id) REFERENCES matricula (matricula_id),
-    CONSTRAINT fk_turmaAluno FOREIGN KEY (turma_id) REFERENCES turma (turma_id)
+	CONSTRAINT fk_matriculaAluno FOREIGN KEY (matricula_id) REFERENCES Matricula (matricula_id),
+    CONSTRAINT fk_turmaAluno FOREIGN KEY (turma_id) REFERENCES Turma (turma_id)
 );
 
 CREATE TABLE Modulo (
@@ -71,23 +71,23 @@ CREATE TABLE Modulo (
     descricao VARCHAR(255),
     qtd_aulas INTEGER,
     facilitador_id INTEGER,
-    CONSTRAINT fk_facilitadorModulo FOREIGN KEY (facilitador_id) REFERENCES facilitador (facilitador_id)
+    CONSTRAINT fk_facilitadorModulo FOREIGN KEY (facilitador_id) REFERENCES Facilitador (facilitador_id)
 );
 
 CREATE TABLE Modulos_integrados (
 	curso_id INTEGER,
     modulo_id INTEGER,
     PRIMARY KEY (curso_id, modulo_id),
-	CONSTRAINT fk_integraCurso FOREIGN KEY (curso_id) REFERENCES curso (curso_id),
-    CONSTRAINT fk_integraModulo FOREIGN KEY (modulo_id) REFERENCES modulo (modulo_id)
+	CONSTRAINT fk_integraCurso FOREIGN KEY (curso_id) REFERENCES Curso (curso_id),
+    CONSTRAINT fk_integraModulo FOREIGN KEY (modulo_id) REFERENCES Modulo (modulo_id)
 );
     
 CREATE TABLE Conteudo_aplicado (
 	modulo_id INTEGER,
     turma_id INTEGER,
     qtd_aulas INTEGER,
-    CONSTRAINT fk_conteudoModulo FOREIGN KEY (modulo_id) REFERENCES modulo (modulo_id),
-    CONSTRAINT fk_conteudoTurma FOREIGN KEY (turma_id) REFERENCES turma (turma_id)
+    CONSTRAINT fk_conteudoModulo FOREIGN KEY (modulo_id) REFERENCES Modulo (modulo_id),
+    CONSTRAINT fk_conteudoTurma FOREIGN KEY (turma_id) REFERENCES Turma (turma_id)
 );
 
 CREATE TABLE matricula_log (
@@ -95,8 +95,6 @@ CREATE TABLE matricula_log (
 	status_antigo BOOLEAN,	
 	status_novo BOOLEAN
     );
-
-DROP TABLE matricula_log;
 
 INSERT INTO Facilitador (facilitador_id, nome, cpf, cep, numero, logradouro, bairro, municipio, uf, email, telefone, celular) VALUES 
 (1, 'José Bezerra', '12345678901', '12345678', '123', 'Rua A', 'Centro', 'Cidade A', 'UF', 'fulano@example.com', '1234567890', '98765432101'),
