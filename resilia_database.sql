@@ -276,7 +276,7 @@ END$$
 DELIMITER ;
 -- Exemplo de update, onde a entidade 'matricula_ativa' do id 3212 é modificado para TRUE.
 UPDATE matricula SET matricula_ativa = TRUE WHERE matricula_id = 3212;
--- SELECT pardão para verificar a tabela de logs.
+-- SELECT padrão para verificar a tabela de logs.
 SELECT * FROM matricula_log;
 
 -- Pergunta (5) - Quantos alunos estão matriculados em cada turma e quem são os facilitadores dessas turmas?
@@ -294,7 +294,17 @@ GROUP BY
     t.turma_id, f.nome;
 
 -- Pergunta (6) - Quais são os facilitadores que têm o maior número de alunos matriculados em suas turmas e em quais cursos esses alunos estão matriculados? 
--- COM ERRO
+-- Obter o facilitador_id com o maior número de turmas
+SELECT 
+    facilitador_id
+FROM 
+    Turma
+GROUP BY 
+    facilitador_id
+ORDER BY 
+    COUNT(*) DESC
+LIMIT 1;
+-- Usar o facilitador_id obtido na Parte 1 para filtrar os resultados
 SELECT 
     f.nome AS facilitador,
     COUNT(a.matricula_id) AS num_alunos,
@@ -310,7 +320,8 @@ INNER JOIN
 INNER JOIN 
     Curso c ON m.curso_id = c.curso_id
 WHERE 
-    f.facilitador_id IN (
+    f.facilitador_id = (
+-- Subconsulta para obter o facilitador_id com o maior número de turmas
         SELECT 
             facilitador_id
         FROM 
