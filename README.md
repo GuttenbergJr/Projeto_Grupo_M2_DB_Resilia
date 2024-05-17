@@ -34,7 +34,7 @@ O projeto pode ser executado online acessando o link [GitHub do Projeto](https:/
 4. Extraia o arquivo ZIP em uma pasta de sua preferência.
 5. Abra o MySQL e navegue até o diretório onde você extraiu os arquivos.
 6. Abra os arquivos "resilia_script" e "resilia_database"
-7. 
+   
 
 ## 📑 Perguntas e consultas
 
