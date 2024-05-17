@@ -21,7 +21,20 @@ As entidades utilizadas e relacionamentos foram:
 
 ![Imagem do Gráfico](https://i.ibb.co/S3CMYYj/modelo-fisico.png)
 
+## Executando o Projeto
 
+### Online
+O projeto pode ser executado online acessando o link [GitHub do Projeto](https://github.com/VihProgramer/Projeto_Grupo_M2_DB_Resilia).
+
+### Localmente
+
+1. Baixe o Xampp na sua máquina e clique em MySQL.
+2. Baixe o MySQL Workbench e instale a porta root.
+3. Faça o download do projeto clicando em "Code" e em seguida "Download ZIP" no [GitHub do Projeto](https://github.com/VihProgramer/Projeto_Grupo_M2_DB_Resilia).
+4. Extraia o arquivo ZIP em uma pasta de sua preferência.
+5. Abra o MySQL e navegue até o diretório onde você extraiu os arquivos.
+6. Abra os arquivos "resilia_script" e "resilia_database"
+7. 
 
 ## 📑 Perguntas e consultas
 
