@@ -37,7 +37,7 @@ BEGIN
     END IF;
 END$$
 DELIMITER ;
--- Exemplo de update, onde a entidade 'matricula_ativa' do id 3212 é modificado para FALSE.
+-- Exemplo de update, onde varios atributos são modificados.
 UPDATE matricula SET matricula_ativa = TRUE WHERE matricula_id = 3212;
 UPDATE matricula SET matricula_ativa = TRUE WHERE matricula_id = 2457;
 UPDATE matricula SET matricula_ativa = FALSE WHERE matricula_id = 1151;
