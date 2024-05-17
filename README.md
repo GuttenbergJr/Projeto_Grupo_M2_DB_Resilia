@@ -70,7 +70,7 @@ MySQL WorkBench
 Excel
 
 
-## 🤝 Squad:
+## 🤝 Equipe:
 
 
 
